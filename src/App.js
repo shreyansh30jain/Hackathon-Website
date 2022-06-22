@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import { useState } from "react";
+import Header from "./components/Header"
+import Hero from "./components/hero"
+import Footer from "./components/footer"
+import AdminForm from "./components/adminForm"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+export default function App(){
+  const [page, setPage] = useState(0);
+  const nextPage = () => {
+    setPage(page + 1);
+  }
+  return(
+    <div>
+      {page === 0 && <Header nextPage={nextPage}/>}
+      {page === 0 &&<Hero/>}
+      {page === 0 &&<Footer/>}
+      {page === 1 && <AdminForm/>}
     </div>
-  );
+  )
 }
-
-export default App;
