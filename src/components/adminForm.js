@@ -1,8 +1,5 @@
 import React from "react";
-export default function adminForm( { nextPage, prevPage } ){
-  const handlenext = () => {
-    nextPage();
-  }
+export default function adminForm( { nextPag } ){
     return(
         <div>
           <h1 className="Main-heading">Challenge Details</h1>
@@ -32,9 +29,9 @@ export default function adminForm( { nextPage, prevPage } ){
     Level Type
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
+    <a class="dropdown-item" href="www.abx.com">Action</a>
+    <a class="dropdown-item" href="www.abx.com">Another action</a>
+    <a class="dropdown-item" href="www.abx.com">Something else here</a>
   </div>
 </div>
 </form>
