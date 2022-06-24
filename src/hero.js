@@ -1,9 +1,9 @@
 import React from "react";
 
-import I1 from "../images/icons/carbon_notebook-reference.svg"
-import I2 from "../images/icons/Vector.svg"
-import I3 from "../images/icons/Robot.svg"
-import I4 from "../images/icons/IdentificationCard.svg"
+import I1 from "./components/images/icons/carbon_notebook-reference.svg"
+import I2 from "./components/images/icons/Vector.svg"
+import I3 from "./components/images/icons/Robot.svg"
+import I4 from "./components/images/icons/IdentificationCard.svg"
 export default function Hero(){
     return(
         <div className="hero">

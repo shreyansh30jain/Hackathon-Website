@@ -1,9 +1,9 @@
 import React from "react";
 
-import  I4 from "../images/icons/PicsArt_04-14-04.42 1.svg"
-import I5 from "../images/icons/Group 1000002515.svg"
-import I6 from "../images/icons/Group 1000002516.svg"
-import I7 from "../images/icons/Group 1000002518.svg"
+import  I4 from "./components/images/icons/PicsArt_04-14-04.42 1.svg"
+import I5 from "./components/images/icons/Group 1000002515.svg"
+import I6 from "./components/images/icons/Group 1000002516.svg"
+import I7 from "./components/images/icons/Group 1000002518.svg"
 
   const Header= ({nextPage}) => {
     const handlenext = () => {

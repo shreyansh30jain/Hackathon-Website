@@ -1,5 +1,5 @@
 import React from "react";
-export default function adminForm( { nextPag } ){
+export default function adminForm( ){
     return(
         <div>
           <h1 className="Main-heading">Challenge Details</h1>
