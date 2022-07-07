@@ -2,9 +2,6 @@ import React from "react";
 import challen from "./CHallenge";
 import I7 from "./components/images/cardimage/Group 1000002466.png"
 
-import Details from "./challengedata"
-import I1 from "./components/images/icons/carbon_skill-level-basic.svg"
-
 const Footer = ({ newNextPage,newData,deleteData}) => {
   
   const handlenewnext = () => {
@@ -14,9 +11,6 @@ const Footer = ({ newNextPage,newData,deleteData}) => {
   const style = {
     height: newData.length>0 ? "1800px" :"1240px"
   }
-  // const arr = [I1,I2,I3,I4,I5,I6]
-  // var image = arr[Math. floor(Math. random() * arr. length)];
-  const [newPage, setNewPage] = React.useState(0);
   const [challenge, setChallenge] = React.useState(challen);
   const [filteredData, setfilteredData] = React.useState([]);
   
@@ -52,11 +46,7 @@ const Footer = ({ newNextPage,newData,deleteData}) => {
     setChallenge(filteredCards)
   }
 
-  const newPrevPage = () => {
-    setTimeout(()=>{
-      setNewPage(newPage-1)
-    })
-  }
+  
 
   return (
     <div className="footer">
@@ -114,7 +104,7 @@ const Footer = ({ newNextPage,newData,deleteData}) => {
       </div>
       <div className="lower-footer" style={style}>
         <div className="row">
-          {newPage ===0 && challenge.map((elem) => {
+          {challenge.map((elem) => {
             const { title, category, status, image, starts, time,id} = elem;
             return (
               <div className="card col-12 col-md-6 col-lg-6 col-xl-3 my-5 mx-3">
@@ -142,34 +132,6 @@ const Footer = ({ newNextPage,newData,deleteData}) => {
               </div>
             );
           })}
-          {newPage === 1 && Details.map((elem) => {
-                const { time, title, sub,category,para } = elem;
-                return(
-                    <div className="challenge--container">
-            <div className="challenge--time"><h3>{time}</h3></div>
-            <h1>{title}</h1>
-            <h2>{sub}</h2>
-            <div className="challenge--image">
-                <img src={I1} alt=""></img>
-                <h3>{category}</h3>
-            </div>
-            <div className="lower-challenge">
-                <h1>Overview</h1>
-                <div className="edit-class">
-                <button className="edit">Edit</button>
-                </div>
-                <div className="delete-class">
-                <button className="delete" onClick={() => {
-                  deletePastData()
-                  newPrevPage()
-                }}>delete</button>
-                </div>
-            </div>
-            <p className="para">{para}
-            </p>
-        </div>
-                )
-            })}
           {newData?.map(data => {
             return (
               <div className="card col-12 col-md-6 col-lg-6 col-xl-3 my-5 mx-3">
