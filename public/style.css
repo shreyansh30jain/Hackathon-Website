@@ -353,7 +353,7 @@ color: #000000;
 .search--area{
 position: absolute;
 width: 1540px;
-height: 324px;
+height: 424px;
 left: 0px;
 top: 1631px;
 background: #002A3B;
@@ -490,9 +490,9 @@ border-radius: 10px;
 .lower-footer{
 position: absolute;
 width: 1540px;
-height: 1196px;
+height: 1796px;
 left: 0px;
-top: 1955px;
+top: 2055px;
 background: #003145;
 }
 .card{
@@ -901,3 +901,116 @@ line-height: 58px;
 letter-spacing: 0.02em;
 color: #64607D;
 }
+
+.dataResult {
+  margin-top: 50px;
+  width: 425px;
+  height: 100px;
+  background-color: rgb(204, 197, 197);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
+  overflow-y: auto;
+  border-radius: 4px;
+}
+.dataResult .dataItem {
+  width: 100%;
+  height: 100px;
+
+  align-items: center;
+  color: black;
+}
+.bnt11{
+  width: 420px;
+  border:#000000;
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor:pointer;
+  background-color: #FFFFFF;
+  font-weight: 900;
+  font-size: 19px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.bn1{
+  position: absolute;
+width: 163px;
+height: 38px;
+left: 93px;
+top: 850px;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 18px;
+text-align: center;
+color: #FFFFFF;
+background-color: #44924C;
+border-radius: 6px;
+border: none;
+cursor: pointer;
+}
+
+.delete-btn{
+background-color: #FFFFFF;
+border: none;
+top: 430px;
+  left: 130px;
+}
+.delete-btn1 button{
+top: 430px;
+}
+.trash-icon1 {
+  cursor: pointer;
+  top: 430px;
+  left: 130px;
+}
+.trash-icon {
+  cursor: pointer;
+  top: 350px;
+  left: 130px;
+}
+
+.gg-trash {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs,1));
+  width: 15px;
+  height: 18px;
+  border: 2px solid transparent;
+  box-shadow:
+      0 0 0 2px,
+      inset -2px 0 0,
+      inset 2px 0 0;
+  border-bottom-left-radius: 1px;
+  border-bottom-right-radius: 1px;
+  margin-top: 4px;
+  color: #DC1414;
+}
+.gg-trash::after,
+.gg-trash::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+}
+
+.gg-trash::after {
+  background: currentColor;
+  border-radius: 3px;
+  width: 16px;
+  height: 2px;
+  top: -4px;
+  left: -5px;
+}
+
+.gg-trash::before {
+  width: 10px;
+  height: 4px;
+  border: 2px solid;
+  border-bottom: transparent;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  top: -7px;
+  left: -2px;
+} 

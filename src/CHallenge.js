@@ -1,6 +1,7 @@
+import {nanoid} from "nanoid"
 const challenge = [
   {
-    id: 1,
+    id: nanoid(),
     title: "Data Science Bootcamp - Graded Datathon",
     category: "Hard",
     status: "Upcoming",
@@ -9,7 +10,7 @@ const challenge = [
     time: "00 : 15 : 22"
   },
   {
-    id: 2,
+    id: nanoid(),
     title: "Data Sprint 72 - Butterfly Identification",
     category: "Medium",
     status: "Upcoming",
@@ -18,7 +19,7 @@ const challenge = [
     time: "                    00 : 12 : 34"
   },
   {
-    id: 3,
+    id: nanoid(),
     title: "Data Sprint 71 - Weather Recognition",
     category: "Medium",
     status: "Active",
@@ -27,7 +28,7 @@ const challenge = [
     time: "01 : 17 : 10"
   },
   {
-    id: 4,
+    id: nanoid(),
     title: "Data Sprint 70-Airline Passenger Satisfaction",
     category: "Easy",
     status: "Active",
@@ -36,7 +37,7 @@ const challenge = [
     time: "00 : 11 : 27"
   },
   {
-    id: 5,
+    id: nanoid(),
     title: "Engineering Graduates Employment Outcomes",
     category: "Easy",
     status: "Past",
@@ -45,7 +46,7 @@ const challenge = [
     time: "16th May'22 09:00 PM"
   },
   {
-    id: 6,
+    id: nanoid(),
     title: "Travel Insurance Claim Prediction",
     category: "Easy",
     status: "Past",

@@ -1,15 +1,24 @@
 import React from "react";
 import challen from "./CHallenge";
+import I7 from "./components/images/cardimage/Group 1000002466.png"
 
-const Footer = ({ props, newNextPage }) => {
+import Details from "./challengedata"
+import I1 from "./components/images/icons/carbon_skill-level-basic.svg"
+
+const Footer = ({ newNextPage,newData,deleteData}) => {
   
   const handlenewnext = () => {
     newNextPage();
 
   };
+  const style = {
+    height: newData.length>0 ? "1800px" :"1240px"
+  }
+  // const arr = [I1,I2,I3,I4,I5,I6]
+  // var image = arr[Math. floor(Math. random() * arr. length)];
+  const [newPage, setNewPage] = React.useState(0);
   const [challenge, setChallenge] = React.useState(challen);
-
-   const inputEL = React.useRef("");
+  const [filteredData, setfilteredData] = React.useState([]);
   
   const filterItem1 = (catChallenge) => {
     const updatedItem = challen.filter((curele) => {
@@ -23,6 +32,31 @@ const Footer = ({ props, newNextPage }) => {
     });
     setChallenge(updatedItem);
   };
+  const handleFilter = (event) => {
+    const searchWord = event.target.value;
+    const newFilter = challen.filter((value) =>{
+      return value.title.toLowerCase().includes(searchWord.toLowerCase())
+    })
+    if (searchWord === "") {
+      setfilteredData([]);
+      setChallenge(challen)
+    } else {
+      setfilteredData(newFilter);
+      setChallenge(newFilter)
+    }
+  }
+  const deletePastData = (id) =>{
+    const filteredCards = challen.filter((element,index)=>{
+      return element.id !== id
+    })
+    setChallenge(filteredCards)
+  }
+
+  const newPrevPage = () => {
+    setTimeout(()=>{
+      setNewPage(newPage-1)
+    })
+  }
 
   return (
     <div className="footer">
@@ -32,11 +66,17 @@ const Footer = ({ props, newNextPage }) => {
         </div>
         <div className="search">
           <input
-            ref={inputEL}
             type="text"
             placeholder="Search"
-          />
-
+            onChange={handleFilter}
+          />{filteredData.length !== 0 &&(
+          <div className="dataResult">
+            {filteredData.map((value) => {
+              return <div>
+                <button className="bnt11">{value.title}</button>
+              </div>
+            })}
+          </div>)}
           <div class="filter">
             <button
               class="btn8 btn-secondary dropdown-toggle"
@@ -72,10 +112,10 @@ const Footer = ({ props, newNextPage }) => {
           </div>
         </div>
       </div>
-      <div className="lower-footer">
+      <div className="lower-footer" style={style}>
         <div className="row">
-          {challenge.map((elem) => {
-            const { id, title, category, status, image, starts, time } = elem;
+          {newPage ===0 && challenge.map((elem) => {
+            const { title, category, status, image, starts, time,id} = elem;
             return (
               <div className="card col-12 col-md-6 col-lg-6 col-xl-3 my-5 mx-3">
                 <div className="row item-inside">
@@ -86,7 +126,6 @@ const Footer = ({ props, newNextPage }) => {
                       className="imgs"
                     ></img>
                   </div>
-                  <div className="key">{id}</div>
                   <h3 className="status">{status}</h3>
                   <h1 className="event">{title}</h1>
                   <h2 className="category">{category}</h2>
@@ -95,6 +134,62 @@ const Footer = ({ props, newNextPage }) => {
                   <button className="bn" onClick={handlenewnext}>
                     Participate Now
                   </button>
+                  <button 
+                    className="delete-btn" onClick={() => deletePastData(id)}>
+                    <i className="gg-trash trash-icon"></i>
+                </button>
+                </div>
+              </div>
+            );
+          })}
+          {newPage === 1 && Details.map((elem) => {
+                const { time, title, sub,category,para } = elem;
+                return(
+                    <div className="challenge--container">
+            <div className="challenge--time"><h3>{time}</h3></div>
+            <h1>{title}</h1>
+            <h2>{sub}</h2>
+            <div className="challenge--image">
+                <img src={I1} alt=""></img>
+                <h3>{category}</h3>
+            </div>
+            <div className="lower-challenge">
+                <h1>Overview</h1>
+                <div className="edit-class">
+                <button className="edit">Edit</button>
+                </div>
+                <div className="delete-class">
+                <button className="delete" onClick={() => {
+                  deletePastData()
+                  newPrevPage()
+                }}>delete</button>
+                </div>
+            </div>
+            <p className="para">{para}
+            </p>
+        </div>
+                )
+            })}
+          {newData?.map(data => {
+            return (
+              <div className="card col-12 col-md-6 col-lg-6 col-xl-3 my-5 mx-3">
+                <div className="row item-inside">
+                  <div className="col-12 col-md-12 col-lg-5 img-div">
+                    <img src={I7} alt="local"></img>
+                  </div>
+                  <h3 className="status">{data.status}</h3>
+                  <h1 className="event">{data.title}</h1>
+                  <h2 className="category">{data.category}</h2>
+                  <h2 className="starts">Starts On (Days : hours : min)</h2>
+                  <h3 className="time">{data.start}</h3> 
+                  <button className="bn" onClick={() => {
+                    handlenewnext()
+                    deleteData(data.cardId)
+                  }}>
+                    Participate Now
+                  </button>
+                  <div className="delete-btn1">
+                  </div>
                 </div>
               </div>
             );
